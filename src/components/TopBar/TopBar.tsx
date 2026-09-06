@@ -14,6 +14,7 @@ const Container = styled.header`
   max-width: 1550px;
   min-height: 64px;
   margin: 0 auto;
+  margin-bottom: var(--gap);
   padding: var(--safe-top) var(--tile-pad) 0;
   border: var(--rule);
   background: var(--paper);
