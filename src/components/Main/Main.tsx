@@ -1,5 +1,8 @@
 import styled from 'styled-components';
+import FavouriteToolsSection from '../FavouriteToolsSection/FavouriteToolsSection';
+import GdanskWeatherSection from '../GdanskWeatherSection/GdanskWeatherSection';
 import PhotoSection from '../PhotoSection/PhotoSection';
+import RecentBooksSection from '../RecentBooksSection/RecentBooksSection';
 import SummarySection from '../SummarySection/SummarySection';
 
 const MainLayout = styled.main`
@@ -26,6 +29,9 @@ function Main() {
     <MainLayout>
       <PhotoSection />
       <SummarySection />
+      <RecentBooksSection aria-label="Recent books" />
+      <FavouriteToolsSection aria-label="Favourite tools" />
+      <GdanskWeatherSection aria-label="Gdańsk weather" />
     </MainLayout>
   );
 }
