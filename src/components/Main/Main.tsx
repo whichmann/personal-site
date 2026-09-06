@@ -25,7 +25,7 @@ function Main() {
   return (
     <MainLayout>
       <PhotoSection />
-      <SummarySection aria-label="Summary placeholder" />
+      <SummarySection />
     </MainLayout>
   );
 }
