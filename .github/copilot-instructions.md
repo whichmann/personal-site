@@ -59,6 +59,7 @@ Repository-scoped workflows are defined in `.github/skills/`:
 
 - `.github/skills/cip/SKILL.md` — commit completed changes and push to `dev` when the user explicitly asks for `CIP`.
 - `.github/skills/feature-organization/SKILL.md` — isolate new features into component directories and colocate their helpers.
+- `.github/skills/update-main/SKILL.md` — create and merge a `dev` → `main` pull request without deleting `dev`.
 - `.github/skills/tests-coverage/SKILL.md` — add simple focused unit tests when the user explicitly asks for `tests-coverage`.
 
 Agents should load and follow the matching skill when the user invokes its trigger phrase.
