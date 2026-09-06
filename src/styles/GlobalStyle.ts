@@ -1,6 +1,15 @@
 import { createGlobalStyle } from 'styled-components';
+import izayoiMonospaced from '../assets/fonts/IzayoiMonospaced.ttf';
 
 const GlobalStyle = createGlobalStyle`
+  @font-face {
+    font-family: 'Izayoi Monospaced';
+    src: url(${izayoiMonospaced}) format('truetype');
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+  }
+
   :root {
     --paper: #f3f0e7;
     --ink: #191611;
@@ -12,7 +21,7 @@ const GlobalStyle = createGlobalStyle`
     --hair: 1px solid color-mix(in srgb, var(--ink) 25%, transparent);
     --safe-top: env(safe-area-inset-top, 0px);
 
-    font-family: 'Apfel Grotezk', sans-serif;
+    font-family: 'Izayoi Monospaced', monospace;
     color: var(--ink);
     background: var(--paper);
     font-synthesis: none;
