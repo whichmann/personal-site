@@ -2,9 +2,19 @@ import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
   :root {
+    --paper: #f3f0e7;
+    --ink: #191611;
+    --ink-soft: #615a4e;
+    --accent: #b5341c;
+    --rule: 1.5px solid var(--ink);
+    --gap: 18px;
+    --tile-pad: 18px;
+    --hair: 1px solid color-mix(in srgb, var(--ink) 25%, transparent);
+    --safe-top: env(safe-area-inset-top, 0px);
+
     font-family: 'Apfel Grotezk', sans-serif;
-    color: #282c34;
-    background: #ffffff;
+    color: var(--ink);
+    background: var(--paper);
     font-synthesis: none;
     text-rendering: optimizeLegibility;
   }
