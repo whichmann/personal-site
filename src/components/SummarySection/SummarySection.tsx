@@ -62,9 +62,11 @@ const NavigationItem = styled.li<{
     color 160ms ease,
     background-color 160ms ease;
 
-  &:hover {
-    color: var(--paper);
-    background: var(--ink);
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      color: var(--paper);
+      background: var(--ink);
+    }
   }
 `;
 
