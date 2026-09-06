@@ -1,6 +1,6 @@
-import { useEffect, useState } from 'react';
-import styled from 'styled-components';
-import { formatWarsawTime } from './TopBar.helpers';
+import { useEffect, useState } from "react";
+import styled from "styled-components";
+import { formatWarsawTime } from "./TopBar.helpers";
 
 const Container = styled.header`
   position: sticky;
@@ -24,6 +24,9 @@ const Name = styled.span`
   font-size: 1.125rem;
   line-height: 1;
   white-space: nowrap;
+  color: var(--ink);
+  font-size: 18px;
+  font-weight: 800;
 `;
 
 const Details = styled.div`
@@ -34,6 +37,9 @@ const Details = styled.div`
   font-size: 0.875rem;
   line-height: 1;
   white-space: nowrap;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: .12em;
 
   @media (max-width: 560px) {
     gap: 10px;
@@ -79,7 +85,7 @@ function TopBar() {
     <Container>
       <Name>Karol Wichmann</Name>
       <Details>
-        <span>Gdańsk, PL</span>
+        <span>GDAŃSK, PL</span>
         <span>{currentTime}</span>
         <Weather>
           <SunIcon />

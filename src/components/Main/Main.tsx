@@ -3,7 +3,7 @@ import PhotoSection from '../PhotoSection/PhotoSection';
 import SummarySection from '../SummarySection/SummarySection';
 
 const MainLayout = styled.main`
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   grid-auto-rows: minmax(96px, auto);
   grid-auto-flow: dense;
   gap: var(--gap);
@@ -11,13 +11,21 @@ const MainLayout = styled.main`
   display: grid;
   width: calc(100% - (var(--gap) * 2));
   max-width: 1550px;
+
+  @media (max-width: 900px) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  @media (max-width: 560px) {
+    grid-template-columns: minmax(0, 1fr);
+  }
 `;
 
 function Main() {
   return (
     <MainLayout>
-      <PhotoSection aria-label="Photo placeholder" />
-      <SummarySection aria-label="Summary placeholder" />
+      <PhotoSection />
+      <SummarySection />
     </MainLayout>
   );
 }
