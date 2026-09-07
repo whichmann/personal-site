@@ -62,11 +62,11 @@ const GlobalStyle = createGlobalStyle`
   }
 
   html {
-    min-width: 320px;
+    width: 100%;
   }
 
   body {
-    min-width: 320px;
+    width: 100%;
     margin: 0;
     font-family: inherit;
     -webkit-font-smoothing: antialiased;
