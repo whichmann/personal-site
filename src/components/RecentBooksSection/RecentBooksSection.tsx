@@ -1,12 +1,32 @@
-import styled from 'styled-components';
-import Section from '../Section/Section';
+import {
+  BookButton,
+  BooksGrid,
+  RecentBooksSection,
+  SectionHeader,
+} from './RecentBooksSection.components';
 
-const RecentBooksSection = styled(Section)`
-  grid-column: span 2;
+function RecentBooks() {
+  const books = [
+    'The Design of Everyday Things',
+    'Atomic Habits',
+    'The Pragmatic Programmer',
+    'Thinking, Fast and Slow',
+    'The Creative Act',
+    'The Left Hand of Darkness',
+  ];
 
-  @media (max-width: 900px) {
-    grid-column: span 1;
-  }
-`;
+  return (
+    <RecentBooksSection aria-label="Recent books">
+      <SectionHeader>RECENT BOOKS</SectionHeader>
+      <BooksGrid>
+        {books.map((book) => (
+          <BookButton key={book} type="button">
+            {book}
+          </BookButton>
+        ))}
+      </BooksGrid>
+    </RecentBooksSection>
+  );
+}
 
-export default RecentBooksSection;
+export default RecentBooks;

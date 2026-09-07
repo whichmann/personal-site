@@ -28,8 +28,8 @@ function Main() {
     <MainLayout>
       <PhotoSection />
       <SummarySection />
-      <RecentBooksSection aria-label="Recent books" />
-      <FavouriteToolsSection aria-label="Favourite tools" />
+      <RecentBooksSection />
+      <FavouriteToolsSection />
       <GdanskWeatherSection aria-label="Gdańsk weather" />
     </MainLayout>
   );

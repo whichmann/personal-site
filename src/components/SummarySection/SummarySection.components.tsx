@@ -20,8 +20,10 @@ export const Introduction = styled.h1`
 `;
 
 export const Navigation = styled.ul`
-  display: grid;
-  grid-template-columns: minmax(0, 1fr);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 256px;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -32,26 +34,42 @@ export const NavigationItem = styled.li<{
   $selected: boolean;
   $hasSelection: boolean;
 }>`
-  position: relative;
+  position: absolute;
+  top: 0;
+  left: 0;
   z-index: 1;
   display: flex;
   align-items: center;
   width: 100%;
+  height: 64px;
   border-top: var(--hair);
-  grid-column: 1;
-  grid-row: ${({ $index, $hasSelection }) =>
-    $hasSelection ? 1 : $index + 1};
   font-size: clamp(0.75rem, calc(0.4rem + 1vw), 0.875rem);
   color: var(--ink);
+  background: var(--paper);
   font-weight: 700;
+  transform: translateY(
+    ${({ $index, $selected, $hasSelection }) =>
+      `${$hasSelection && $selected ? 0 : $index * 64}px`}
+  );
   opacity: ${({ $selected, $hasSelection }) =>
     !$hasSelection || $selected ? 1 : 0};
+  visibility: ${({ $selected, $hasSelection }) =>
+    !$hasSelection || $selected ? 'visible' : 'hidden'};
   pointer-events: ${({ $selected, $hasSelection }) =>
     !$hasSelection || $selected ? 'auto' : 'none'};
   transition:
+    transform 300ms ease,
     opacity 220ms ease,
+    visibility 0s linear 220ms,
     color 160ms ease,
     background-color 160ms ease;
+
+  ${({ $selected, $hasSelection }) =>
+    $hasSelection &&
+    $selected &&
+    `
+      z-index: 2;
+    `}
 
   @media (hover: hover) and (pointer: fine) {
     &:hover {
@@ -77,6 +95,7 @@ export const NavigationButton = styled.button`
   font-weight: inherit;
   text-align: left;
   cursor: pointer;
+  overflow: hidden;
 `;
 
 export const NavigationImageFrame = styled.span`
@@ -122,9 +141,11 @@ export const PlusIcon = styled.span<{ $selected: boolean }>`
 `;
 
 export const Details = styled.li`
-  position: relative;
-  grid-column: 1;
-  grid-row: 2;
+  position: absolute;
+  top: 64px;
+  right: 0;
+  bottom: 0;
+  left: 0;
   border-top: var(--hair);
   margin: 0;
   padding: var(--tile-pad);
