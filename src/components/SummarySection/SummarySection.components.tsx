@@ -23,7 +23,7 @@ export const Navigation = styled.ul`
   position: relative;
   display: flex;
   flex-direction: column;
-  height: 256px;
+  height: 288px;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -41,7 +41,7 @@ export const NavigationItem = styled.li<{
   display: flex;
   align-items: center;
   width: 100%;
-  height: 64px;
+  height: 72px;
   border-top: var(--hair);
   font-size: clamp(0.75rem, calc(0.4rem + 1vw), 0.875rem);
   color: var(--ink);
@@ -49,7 +49,7 @@ export const NavigationItem = styled.li<{
   font-weight: 700;
   transform: translateY(
     ${({ $index, $selected, $hasSelection }) =>
-      `${$hasSelection && $selected ? 0 : $index * 64}px`}
+      `${$hasSelection && $selected ? 0 : $index * 72}px`}
   );
   opacity: ${({ $selected, $hasSelection }) =>
     !$hasSelection || $selected ? 1 : 0};
@@ -87,7 +87,7 @@ export const NavigationButton = styled.button`
   padding: 12px 16px;
   width: 100%;
   height: 100%;
-  min-height: 64px;
+  min-height: 72px;
   border: 0;
   color: inherit;
   background: transparent;
@@ -142,7 +142,7 @@ export const PlusIcon = styled.span<{ $selected: boolean }>`
 
 export const Details = styled.li`
   position: absolute;
-  top: 64px;
+  top: 72px;
   right: 0;
   bottom: 0;
   left: 0;
