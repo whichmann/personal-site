@@ -24,49 +24,51 @@ function SummarySection() {
         products, run teams, watch stars, and sometimes create some music.
       </Introduction>
       <Navigation aria-label="Portfolio sections">
-        {summaryItems.map((item, index) => (
-          <NavigationItem
-            key={item.id}
-            $index={index}
-            $selected={selectedItemId === item.id}
-            $hasSelection={Boolean(selectedItemId)}
-            aria-hidden={Boolean(selectedItemId && selectedItemId !== item.id)}
-          >
-            <NavigationButton
-              type="button"
-              tabIndex={
-                selectedItemId && selectedItemId !== item.id ? -1 : undefined
-              }
-              aria-pressed={selectedItemId === item.id}
-              aria-controls="summary-details"
-              onClick={() =>
-                setSelectedItemId((currentId) =>
-                  currentId === item.id ? null : item.id
-                )
-              }
+        {summaryItems.map((item, index) => {
+          const isSelected = selectedItemId === item.id;
+
+          return (
+            <NavigationItem
+              key={item.id}
+              $index={index}
+              $selected={isSelected}
+              $hasSelection={Boolean(selectedItemId)}
+              aria-hidden={Boolean(selectedItemId && !isSelected)}
             >
-              {item.imageSrc && (
-                <NavigationImageFrame>
-                  <NavigationImage
-                    src={`${process.env.PUBLIC_URL}${item.imageSrc}`}
-                    alt={`${item.label} logo`}
-                  />
-                </NavigationImageFrame>
-              )}
-              <NavigationLabel>{item.label}</NavigationLabel>
-              <PlusIcon $selected={selectedItemId === item.id} aria-hidden="true">
-                <svg
-                  viewBox="0 0 16 16"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="1.7"
-                >
-                  <path d="M8 2.5v11M2.5 8h11" />
-                </svg>
-              </PlusIcon>
-            </NavigationButton>
-          </NavigationItem>
-        ))}
+              <NavigationButton
+                type="button"
+                tabIndex={selectedItemId && !isSelected ? -1 : undefined}
+                aria-pressed={isSelected}
+                aria-controls="summary-details"
+                onClick={() =>
+                  setSelectedItemId((currentId) =>
+                    currentId === item.id ? null : item.id
+                  )
+                }
+              >
+                {item.imageSrc && (
+                  <NavigationImageFrame>
+                    <NavigationImage
+                      src={`${process.env.PUBLIC_URL}${item.imageSrc}`}
+                      alt={`${item.label} logo`}
+                    />
+                  </NavigationImageFrame>
+                )}
+                <NavigationLabel>{item.label}</NavigationLabel>
+                <PlusIcon $selected={isSelected} aria-hidden="true">
+                  <svg
+                    viewBox="0 0 16 16"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="1.7"
+                  >
+                    <path d="M8 2.5v11M2.5 8h11" />
+                  </svg>
+                </PlusIcon>
+              </NavigationButton>
+            </NavigationItem>
+          );
+        })}
         {selectedItem && (
           <Details id="summary-details">{selectedItem.description}</Details>
         )}
