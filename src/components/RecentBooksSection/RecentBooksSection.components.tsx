@@ -15,12 +15,16 @@ export const BooksGrid = styled.div`
   grid-template-columns: repeat(2, minmax(0, 1fr));
   grid-auto-rows: minmax(120px, 1fr);
 
+  @media (max-width: 900px) {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
   @media (max-width: 560px) {
     grid-template-columns: minmax(0, 1fr);
   }
 `;
 
-export const BookButton = styled.button`
+export const BookWrapper = styled.div`
   display: flex;
   align-items: center;
   gap: var(--tile-pad);
@@ -37,7 +41,6 @@ export const BookButton = styled.button`
   font-weight: 700;
   line-height: 1.1;
   text-align: left;
-  cursor: pointer;
 
   img {
     display: block;
@@ -65,7 +68,7 @@ export const BookButton = styled.button`
     background-size: 6px 6px;
   }
 
-  @media (max-width: 560px) {
+  @media (max-width: 900px) {
     border-right: 0;
 
     &:nth-last-child(-n + 2) {
@@ -73,7 +76,6 @@ export const BookButton = styled.button`
     }
 
     &:last-child {
-      border-right: 0;
       border-bottom: 0;
     }
   }
@@ -102,6 +104,6 @@ export const RecentBooksSection = styled(Section)`
   grid-column: span 2;
 
   @media (max-width: 900px) {
-    grid-column: 1 / -1;
+    grid-column: span 1;
   }
 `;

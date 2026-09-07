@@ -1,6 +1,6 @@
 import {
   BookAuthor,
-  BookButton,
+  BookWrapper,
   BookInfo,
   BookTitle,
   BooksGrid,
@@ -31,7 +31,7 @@ function RecentBooks() {
       <SectionHeader>RECENT BOOKS THAT I LIKED</SectionHeader>
       <BooksGrid>
         {books.map((book) => (
-          <BookButton key={book.cover} type="button">
+          <BookWrapper key={book.cover}>
             <img
               src={`${process.env.PUBLIC_URL}/${book.cover}`}
               alt={`${book.title} cover`}
@@ -40,7 +40,7 @@ function RecentBooks() {
               <BookTitle>{book.title}</BookTitle>
               <BookAuthor>{book.author}</BookAuthor>
             </BookInfo>
-          </BookButton>
+          </BookWrapper>
         ))}
       </BooksGrid>
     </RecentBooksSection>
