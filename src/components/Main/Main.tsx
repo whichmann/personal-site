@@ -10,10 +10,9 @@ const MainLayout = styled.main`
   grid-auto-rows: minmax(96px, auto);
   grid-auto-flow: dense;
   gap: var(--gap);
-  margin: 0 auto var(--gap);
   display: grid;
-  width: calc(100% - (var(--gap) * 2));
-  max-width: 1550px;
+  width: 100%;
+  margin-bottom: var(--gap);
 
   @media (max-width: 900px) {
     grid-template-columns: repeat(2, minmax(0, 1fr));

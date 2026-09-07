@@ -46,6 +46,7 @@ There is no standalone lint script. CRA’s development/build tooling applies th
 
 - Keep the application composition in `App.tsx` and the mount/bootstrap logic in `index.tsx`; do not move browser setup into the page component.
 - When implementing a new feature, isolate it into `src/components/[component-name]/` with a matching component file such as `src/components/TopBar/TopBar.tsx`. Keep component-only helpers in matching files such as `TopBar.helpers.ts`, and put helpers shared across features in `src/utils/utils.ts`.
+- Keep simple styled UI components in a matching `[ComponentName].components.tsx` file beside the main component, export them from that file, and import them into `[ComponentName].tsx`.
 - Keep global rules in `index.css` and component-scoped presentation in `App.css` (or a stylesheet next to the component). Preserve the existing class-based CSS approach unless the surrounding feature adopts another pattern.
 - Use TypeScript for application and test files. The project uses strict type checking, `react-jsx`, ES module imports, and CRA’s `src`-only TypeScript include.
 - Do not automatically create or expand tests during routine implementation. Only add tests when explicitly requested, and keep the `tests-coverage` workflow to simple unit tests using `@testing-library/react` queries against rendered behavior.

@@ -10,23 +10,30 @@ const Container = styled.header`
   align-items: center;
   justify-content: space-between;
   gap: var(--gap);
-  width: calc(100% - (var(--gap) * 2));
-  max-width: 1550px;
+  width: 100%;
   min-height: 64px;
-  margin: 0 auto;
   margin-bottom: var(--gap);
-  padding: var(--safe-top) var(--tile-pad) 0;
+  padding: var(--safe-top) var(--gap) 0;
   border: var(--rule);
   background: var(--paper);
+
+  @media (max-width: 560px) {
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 8px;
+    padding: 8px var(--gap) 6px;
+  }
 `;
 
 const Name = styled.span`
-  font-size: 1.125rem;
+  font-size: 1.125em;
   line-height: 1;
   white-space: nowrap;
   color: var(--ink);
   font-size: 18px;
   font-weight: 800;
+  letter-spacing: 0.12em;
 `;
 
 const Details = styled.div`
@@ -43,7 +50,7 @@ const Details = styled.div`
 
   @media (max-width: 560px) {
     gap: 10px;
-    font-size: 0.75rem;
+    font-size: 9px;
   }
 `;
 
@@ -83,7 +90,7 @@ function TopBar() {
 
   return (
     <Container>
-      <Name>Karol Wichmann</Name>
+      <Name>KAROL WICHMANN</Name>
       <Details>
         <span>GDAŃSK, PL</span>
         <span>{currentTime}</span>
