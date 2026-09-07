@@ -1,5 +1,8 @@
 import {
+  BookAuthor,
   BookButton,
+  BookInfo,
+  BookTitle,
   BooksGrid,
   RecentBooksSection,
   SectionHeader,
@@ -7,21 +10,36 @@ import {
 
 function RecentBooks() {
   const books = [
-    'The Design of Everyday Things',
-    'Atomic Habits',
-    'The Pragmatic Programmer',
-    'Thinking, Fast and Slow',
-    'The Creative Act',
-    'The Left Hand of Darkness',
+    { title: 'Ilion', author: 'Dan Simmons', cover: 'dan.webp' },
+    { title: 'Dune', author: 'Frank Herbert', cover: 'herbert.jpg' },
+    {
+      title: 'The Woman in the Dune',
+      author: 'Kobo Abe',
+      cover: 'kobo.jpg',
+    },
+    {
+      title: 'One, None and a Hundred Thousand',
+      author: 'Luigi Pirandello',
+      cover: 'luigi.jpg',
+    },
+    { title: "Wilhelm's Room", author: 'Tove Ditlevsen', cover: 'tove.webp' },
+    { title: 'Limes Inferior', author: 'Janusz Zajdel', cover: 'zajdel.webp' },
   ];
 
   return (
     <RecentBooksSection aria-label="Recent books">
-      <SectionHeader>RECENT BOOKS</SectionHeader>
+      <SectionHeader>RECENT BOOKS THAT I LIKED</SectionHeader>
       <BooksGrid>
         {books.map((book) => (
-          <BookButton key={book} type="button">
-            {book}
+          <BookButton key={book.cover} type="button">
+            <img
+              src={`${process.env.PUBLIC_URL}/${book.cover}`}
+              alt={`${book.title} cover`}
+            />
+            <BookInfo>
+              <BookTitle>{book.title}</BookTitle>
+              <BookAuthor>{book.author}</BookAuthor>
+            </BookInfo>
           </BookButton>
         ))}
       </BooksGrid>
