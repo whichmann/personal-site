@@ -64,6 +64,7 @@ export const FooterLink = styled.a`
   @media (max-width: 560px) {
     &:first-child {
       border-right: 0;
+      border-bottom: var(--hair);
     }
   }
 `;

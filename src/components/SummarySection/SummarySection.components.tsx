@@ -146,12 +146,14 @@ export const Details = styled.li`
   right: 0;
   bottom: 0;
   left: 0;
+  display: flex;
+  align-items: center;
   border-top: var(--hair);
   margin: 0;
   padding: var(--tile-pad);
   list-style: none;
   color: var(--ink-soft);
-  font-size: 1.125rem;
+  font-size: clamp(0.9rem, 2vw, 1.5rem);
   line-height: 1.25;
   opacity: 1;
   transform: translateY(0);
