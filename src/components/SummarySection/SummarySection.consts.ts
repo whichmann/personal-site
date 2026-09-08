@@ -1,3 +1,5 @@
+export const SUMMARY_SECTION_LABEL = 'Summary';
+
 export type SummaryItem = {
   id: string;
   label: string;
@@ -5,11 +7,18 @@ export type SummaryItem = {
   imageSrc?: string;
 };
 
-export const summaryItems: SummaryItem[] = [
+export const SUMMARY_INTRO = {
+  greeting: "Hi, I'm",
+  name: 'Karol Wichmann',
+  description:
+    'I write code, create products, run teams, watch stars, and sometimes create some music.',
+};
+
+export const SUMMARY_ITEMS: SummaryItem[] = [
   {
     id: 'TIS',
     label: 'At TIS, I develop next-generation Cash Forecasting platform',
-    imageSrc: '/tis-logo.png',  
+    imageSrc: '/tis-logo.png',
     description:
       'Working on a large-scale Cash Forecasting platform, building data-intensive web applications. Built real-time data handling features, ensuring seamless synchronization between user input and multiple data sources',
   },

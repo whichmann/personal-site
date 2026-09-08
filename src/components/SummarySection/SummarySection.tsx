@@ -1,5 +1,9 @@
 import { useState } from 'react';
-import { summaryItems } from './SummarySection.helpers';
+import {
+  SUMMARY_INTRO,
+  SUMMARY_ITEMS,
+  SUMMARY_SECTION_LABEL,
+} from './SummarySection.consts';
 import {
   Details,
   Introduction,
@@ -15,16 +19,16 @@ import {
 
 function SummarySection() {
   const [selectedItemId, setSelectedItemId] = useState<string | null>(null);
-  const selectedItem = summaryItems.find((item) => item.id === selectedItemId);
+  const selectedItem = SUMMARY_ITEMS.find((item) => item.id === selectedItemId);
 
   return (
-    <SummarySectionContainer aria-label="Summary">
+    <SummarySectionContainer aria-label={SUMMARY_SECTION_LABEL}>
       <Introduction>
-        Hi, I&apos;m <strong>Karol Wichmann</strong>. I write code, create
-        products, run teams, watch stars, and sometimes create some music.
+        {SUMMARY_INTRO.greeting} <strong>{SUMMARY_INTRO.name}</strong>.{' '}
+        {SUMMARY_INTRO.description}
       </Introduction>
       <Navigation aria-label="Portfolio sections">
-        {summaryItems.map((item, index) => {
+        {SUMMARY_ITEMS.map((item, index) => {
           const isSelected = selectedItemId === item.id;
 
           return (

@@ -13,7 +13,7 @@ export const SummarySectionContainer = styled(Section)`
 export const Introduction = styled.h1`
   margin: 0;
   padding: var(--tile-pad);
-  font-size: clamp(1.2rem, 4vw, 3.5rem);
+  font-size: clamp(1rem, 3vw, 2.5rem);
   font-weight: 400;
   line-height: 0.98;
   letter-spacing: -0.04em;

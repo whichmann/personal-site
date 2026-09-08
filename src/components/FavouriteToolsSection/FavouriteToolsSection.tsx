@@ -1,47 +1,34 @@
-import styled from 'styled-components';
-import Section from '../Section/Section';
-
-const SectionHeader = styled.header`
-  padding: var(--tile-pad);
-  border-bottom: var(--hair);
-  font-size: 1rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-`;
-
-const SectionFooter = styled.footer`
-  margin-top: auto;
-  padding: var(--tile-pad);
-  border-top: var(--hair);
-`;
-
-const AllToolsButton = styled.button`
-  padding: 0;
-  border: 0;
-  color: var(--accent);
-  background: transparent;
-  font: inherit;
-  font-size: 1rem;
-  font-weight: 700;
-  letter-spacing: 0.04em;
-  text-align: left;
-  cursor: pointer;
-`;
-
-const FavouriteToolsSection = styled(Section)`
-  grid-column: span 2;
-
-  @media (max-width: 900px) {
-    grid-column: span 1;
-  }
-`;
+import {
+  AllToolsButton,
+  FavouriteToolsSection,
+  SectionFooter,
+  SectionHeader,
+  ToolDescription,
+  ToolTitle,
+  ToolTile,
+  ToolsGrid,
+} from './FavouriteToolsSection.components';
+import {
+  ALL_TOOLS_LABEL,
+  FAVOURITE_TOOLS,
+  FAVOURITE_TOOLS_SECTION_ARIA_LABEL,
+  FAVOURITE_TOOLS_SECTION_LABEL,
+} from './FavouriteToolsSection.consts';
 
 function FavouriteTools() {
   return (
-    <FavouriteToolsSection aria-label="Favourite tools">
-      <SectionHeader>FAVOURITE TOOLS</SectionHeader>
+    <FavouriteToolsSection aria-label={FAVOURITE_TOOLS_SECTION_ARIA_LABEL}>
+      <SectionHeader>{FAVOURITE_TOOLS_SECTION_LABEL}</SectionHeader>
+      <ToolsGrid>
+        {FAVOURITE_TOOLS.map((tool) => (
+          <ToolTile key={tool.title}>
+            <ToolTitle>{tool.title}</ToolTitle>
+            <ToolDescription>{tool.description}</ToolDescription>
+          </ToolTile>
+        ))}
+      </ToolsGrid>
       <SectionFooter>
-        <AllToolsButton type="button">ALL TOOLS →</AllToolsButton>
+        <AllToolsButton type="button">{ALL_TOOLS_LABEL}</AllToolsButton>
       </SectionFooter>
     </FavouriteToolsSection>
   );
