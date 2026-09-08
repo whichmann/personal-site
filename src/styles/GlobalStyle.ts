@@ -43,7 +43,7 @@ const GlobalStyle = createGlobalStyle`
     --ink-soft: #615a4e;
     --accent: #b5341c;
     --rule: 1.5px solid var(--ink);
-    --gap: 18px;
+    --gap: 16px;
     --tile-pad: 18px;
     --hair: 1px solid color-mix(in srgb, var(--ink) 25%, transparent);
     --safe-top: env(safe-area-inset-top, 0px);

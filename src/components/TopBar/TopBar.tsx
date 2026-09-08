@@ -11,7 +11,7 @@ const Container = styled.header`
   justify-content: space-between;
   gap: var(--gap);
   width: 100%;
-  min-height: 64px;
+  min-height: 34px;
   margin-bottom: var(--gap);
   padding: var(--safe-top) var(--gap) 0;
   border: var(--rule);
