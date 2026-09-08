@@ -22,10 +22,10 @@ export const ToolsGrid = styled.div`
 
 export const ToolTile = styled.article`
   display: flex;
+  align-items: center;
   min-width: 0;
   min-height: 120px;
-  flex-direction: column;
-  justify-content: center;
+  flex-direction: row;
   gap: 4px;
   padding: var(--tile-pad);
   border-right: var(--hair);
@@ -63,6 +63,23 @@ export const ToolTile = styled.article`
   }
 `;
 
+export const ToolIcon = styled.img`
+  display: block;
+  flex: 0 0 42px;
+  width: 42px;
+  height: 42px;
+  margin-right: 10px;
+  object-fit: contain;
+`;
+
+export const ToolInfo = styled.span`
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4px;
+`;
+
 export const ToolTitle = styled.span`
   min-width: 0;
   font-size: 1.125rem;
@@ -94,6 +111,39 @@ export const AllToolsButton = styled.button`
   font-weight: 700;
   letter-spacing: 0.04em;
   text-align: left;
+  cursor: pointer;
+`;
+
+export const ToolsPopupBackdrop = styled.div`
+  position: fixed;
+  inset: 0;
+  z-index: 20;
+  display: grid;
+  place-items: center;
+  padding: var(--gap);
+  background: color-mix(in srgb, var(--ink) 25%, transparent);
+`;
+
+export const ToolsPopup = styled.div`
+  position: relative;
+  min-width: min(320px, 100%);
+  padding: calc(var(--tile-pad) * 2);
+  border: var(--rule);
+  color: var(--paper);
+  background: var(--ink);
+  text-align: center;
+`;
+
+export const ToolsPopupClose = styled.button`
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  padding: 0;
+  border: 0;
+  color: inherit;
+  background: transparent;
+  font-size: 1.25rem;
+  line-height: 1;
   cursor: pointer;
 `;
 
