@@ -30,7 +30,7 @@ function Main() {
       <SummarySection />
       <RecentBooksSection />
       <FavouriteToolsSection />
-      <GdanskWeatherSection aria-label="Gdańsk weather" />
+      <GdanskWeatherSection />
     </MainLayout>
   );
 }
