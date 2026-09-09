@@ -1,9 +1,9 @@
-import { useState } from 'react';
+import { useState } from "react";
 import {
   SUMMARY_INTRO,
   SUMMARY_ITEMS,
   SUMMARY_SECTION_LABEL,
-} from './SummarySection.consts';
+} from "./SummarySection.consts";
 import {
   Details,
   Introduction,
@@ -15,7 +15,7 @@ import {
   NavigationLabel,
   PlusIcon,
   SummarySectionContainer,
-} from './SummarySection.components';
+} from "./SummarySection.components";
 
 function SummarySection() {
   const [selectedItemId, setSelectedItemId] = useState<string | null>(null);
@@ -24,10 +24,13 @@ function SummarySection() {
   return (
     <SummarySectionContainer aria-label={SUMMARY_SECTION_LABEL}>
       <Introduction>
-        {SUMMARY_INTRO.greeting} <strong>{SUMMARY_INTRO.name}</strong>.{' '}
+        {SUMMARY_INTRO.greeting} <strong>{SUMMARY_INTRO.name}</strong>.{" "}
         {SUMMARY_INTRO.description}
       </Introduction>
-      <Navigation aria-label="Portfolio sections">
+      <Navigation
+        $itemCount={SUMMARY_ITEMS.length}
+        aria-label="Portfolio sections"
+      >
         {SUMMARY_ITEMS.map((item, index) => {
           const isSelected = selectedItemId === item.id;
 
@@ -46,7 +49,7 @@ function SummarySection() {
                 aria-controls="summary-details"
                 onClick={() =>
                   setSelectedItemId((currentId) =>
-                    currentId === item.id ? null : item.id
+                    currentId === item.id ? null : item.id,
                   )
                 }
               >
