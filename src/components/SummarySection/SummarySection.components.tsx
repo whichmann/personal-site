@@ -19,11 +19,11 @@ export const Introduction = styled.h1`
   letter-spacing: -0.04em;
 `;
 
-export const Navigation = styled.ul`
+export const Navigation = styled.ul<{ $itemCount: number }>`
   position: relative;
   display: flex;
   flex-direction: column;
-  height: 288px;
+  height: ${({ $itemCount }) => `${$itemCount * 72}px`};
   margin: 0;
   padding: 0;
   list-style: none;

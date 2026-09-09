@@ -6,7 +6,7 @@ export const ALL_TOOLS_MESSAGE = 'you got me!';
 export const FAVOURITE_TOOLS = [
   {
     title: 'React, Redux, Saga',
-    description: 'My GO TO stack for building scalable web applications.',
+    description: 'My go-to stack for building scalable web applications.',
     icon: 'react.svg',
   },
   {
@@ -37,7 +37,7 @@ export const FAVOURITE_TOOLS = [
   },
   {
     title: 'Node, Next.js',
-    description: 'My GO TO stack for building full-stack applications.',
+    description: 'My preferred stack for building full-stack applications.',
     icon: 'nextjs.svg',
   },
   {
